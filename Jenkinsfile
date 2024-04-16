@@ -13,11 +13,6 @@ pipeline {
                 cleanWs()
             }
         }
-        stage('Checkout from Git') {
-            steps {
-                git branch: 'master', url: 'https://github.com/jpvieirah/Netflix.git'
-            }
-        }
         stage("Sonarqube Analysis") {
             steps {
                 withSonarQubeEnv('sonar-server') {
